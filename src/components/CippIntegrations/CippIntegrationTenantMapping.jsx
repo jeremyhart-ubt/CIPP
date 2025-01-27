@@ -82,7 +82,7 @@ const CippIntegrationSettings = ({ children }) => {
     const selectedTenant = formControl.getValues("tenantFilter");
     const selectedCompany = formControl.getValues("integrationCompany");
     if (!selectedTenant || !selectedCompany) return;
-    if (tableData?.find((item) => item.TenantId === selectedTenant.addedFields.customerId)) return;
+    if (tableData != [] && tableData?.find((item) => item.TenantId === selectedTenant.addedFields.customerId)) return;
 
     const newRowData = {
       TenantId: selectedTenant.addedFields.customerId,
